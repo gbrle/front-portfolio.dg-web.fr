@@ -63,13 +63,13 @@ cursor: pointer;
   background-repeat: no-repeat;
   width: 100%;
   position: absolute;
-  height: 235px;
+  height: 169px;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   top: 0;
 }
 .card {
-  max-height: 330px;
+  max-height: 280px;
   margin-top: 30px;
   margin-bottom: 30px;
 
@@ -122,7 +122,7 @@ cursor: pointer;
 
 .card:hover .card__img--hover {
   height: 100%;
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
 .card:hover .card__info {
