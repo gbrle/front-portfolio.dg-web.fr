@@ -16,7 +16,7 @@ export default function SideBar({sideBarToggle, sideBarStatus, heightOfHeader}) 
           }}
           className="btn-lg border-0 bg-transparent"
         >
-          <FontAwesomeIcon icon={faTimes} size="2x" />
+          <FontAwesomeIcon icon={faTimes} size="1x" />
         </button>
       </div>
       <div className="mt-5">

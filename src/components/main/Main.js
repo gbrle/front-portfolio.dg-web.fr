@@ -15,10 +15,10 @@ export default function Main(props) {
       className="main d-flex flex-column w-100 pt-4 pt-md-5 p-2 p-md-5 text-center"
       style={{ height: `calc(100vh - ${props.heightOfHeader}px)` }}
     >
-      <div class="lines">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+      <div className="lines">
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
       </div>
 
       <Route path="/" exact component={Presentation} />

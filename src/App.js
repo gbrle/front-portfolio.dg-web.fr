@@ -12,7 +12,7 @@ export default class App extends Component {
     super(props);
     this.state = {
       heightOfHeader: "10px",
-      sideBarStatus: false
+      sideBarStatus: false,
     };
   }
   getInitialHeight = (initialHeight) => {
@@ -23,13 +23,17 @@ export default class App extends Component {
   };
 
   sideBarToggle = () => {
-      this.setState({ sideBarStatus: !this.state.sideBarStatus })
-  }
+    this.setState({ sideBarStatus: !this.state.sideBarStatus });
+  };
+  sideBarToggleExperiences = () => {
+    this.setState({ sideBarStatus: true });
+  };
 
   render() {
     const contextValue = {
       sideBarStatus: this.sideBarStatus,
       sideBarToggle: this.sideBarToggle,
+      sideBarToggleExperiences: this.sideBarToggleExperiences,
     };
 
     return (
@@ -42,11 +46,9 @@ export default class App extends Component {
             />
 
             <div className="d-flex flex-row flex-fill">
-              <Main
-                heightOfHeader={this.state.heightOfHeader}
-              />
+              <Main heightOfHeader={this.state.heightOfHeader} />
               <SideBar
-                sideBarToggle={this.sideBarToggle}  
+                sideBarToggle={this.sideBarToggle}
                 sideBarStatus={this.state.sideBarStatus}
                 heightOfHeader={this.state.heightOfHeader}
               />
