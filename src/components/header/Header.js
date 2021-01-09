@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
 import fingerMove from "./slide-left.gif";
 import logo from "./dg-web-logo.svg";
+import "./header.css";
+
 
 export default class Header extends Component {
   constructor(props) {
@@ -24,15 +26,26 @@ export default class Header extends Component {
         ref={this.header}
         className="backgroundColor-black position-relative"
       >
+        <div className="lines">
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
         <div className="logo d-flex pt-3 pl-3 pl-md-5 flex-wrap align-items-center">
-          <Link to="/">
+          <Link to="/" style={{ zIndex: 3 }}>
             <img className="logo-dg-web" alt="logo-dg-web" src={logo} />
           </Link>
           <div>
-            <p className="pl-3 text-light mb-0 font-weight-bold">
+            <p
+              style={{ zIndex: 3 }}
+              className="pl-3 text-light mb-0 font-weight-bold"
+            >
               David Gabriele
             </p>
-            <p style={{ fontSize: "14px" }} className="pl-3 text-light mb-0">
+            <p
+              style={{ fontSize: "14px", zIndex: 3 }}
+              className="pl-3 text-light mb-0"
+            >
               Développement web
             </p>
           </div>

@@ -76,6 +76,7 @@ nav {
   color: #cb875f;
 }
 .menu {
+  z-index: 3;
   overflow-x: scroll;
 }
 .menu a {
