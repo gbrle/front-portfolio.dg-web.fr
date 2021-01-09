@@ -11,7 +11,7 @@ export default function Main(props) {
 
   return (
     <div
-      className="main d-flex flex-column w-100 pt-4 pt-md-5 p-2 p-md-5 text-center"
+      className="main d-flex container flex-column w-100 pt-4 pt-md-5 p-2 p-md-5 text-center"
       style={{ height: `calc(100vh - ${props.heightOfHeader}px)` }}
     >
 

@@ -82,7 +82,7 @@ constructor(props){
         en cours requièrent l'autoformation sur de nouvelles technologies telles
         que <strong>ReactJS</strong> sur laquelle je me forme actuellement.
       </p>
-      <div className="mt-5 container">
+      <div className="mt-5">
         <div className="row">
           {this.state.experiences.map(({ title, date, image, descriptif }, index) => (
             <Card

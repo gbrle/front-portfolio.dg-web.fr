@@ -95,30 +95,35 @@ nav {
 .main {
   overflow-y: scroll;
 }
-.main strong {
+strong {
   font-style: normal;
   font-weight: lighter;
   background-color: rgba(203, 135, 95, 0.3);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
-.main strong:hover {
+strong:hover {
   background-color: rgba(203, 135, 95, 0.4);
   border-bottom: 1px solid black;
 }
 .main::-webkit-scrollbar {
   display: none;
 }
-.main h1 {
+h1 {
   font-family: "Anton", sans-serif;
   font-size: 45px;
   margin-bottom: 33px;
 }
-.main h2 {
+h2 {
   padding-top: 10px;
   padding-bottom: 10px;
   font-family: "Anton", sans-serif;
 }
-.main p {
+h3{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: "Anton", sans-serif;
+}
+p {
   font-size: 18px;
   color: black;
 }
@@ -130,6 +135,7 @@ nav {
   width: 42%;
   background-color: whitesmoke;
   overflow-y: scroll;
+  position: relative;
 }
 .sideBar::-webkit-scrollbar {
   display: none;
@@ -138,39 +144,32 @@ nav {
   display: none;
 }
 /** Animations */
-.fadeIn{
+.fadeIn {
   animation-duration: 1s;
   animation-name: FadeIn;
 }
-@keyframes FadeIn
-{
-    0%
-    {
-        opacity: 0;
-    }
-    100%
-    {
-       opacity: 1;
-    }
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-.fadeOut{
+.fadeOut {
   animation-duration: 1s;
   animation-name: FadeOut;
 }
-@keyframes FadeOut
-{
-    0%
-    {
-        opacity: 1;
-    }
-    100%
-    {
-       opacity: 0;
-    }
+@keyframes FadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Wrapper Menu Responsive */
-
 
 /** Responsive */
 @media screen and (max-width: 768px) {
@@ -184,9 +183,12 @@ nav {
     right: 0;
   }
   .sideBar {
-  width: 100%;
-  position: absolute;
-}
+    width: 100%;
+    position: absolute;
+  }
+  .buttonCloseSideBar {
+    right: 1px;
+  }
 }
 @media screen and (max-width: 640px) {
   .fingerMove {
