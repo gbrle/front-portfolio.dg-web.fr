@@ -11,6 +11,13 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      experience: {
+        title: null,
+        image: null,
+        link: null,
+        date: null,
+        descriptif: null,
+      },
       heightOfHeader: "10px",
       sideBarStatus: false,
     };
@@ -28,12 +35,24 @@ export default class App extends Component {
   sideBarToggleExperiences = () => {
     this.setState({ sideBarStatus: true });
   };
+  selectExperience = (title, link, date, image, descriptif) => {
+    this.setState({
+      experience: {
+        title: title,
+        link: link,
+        date: date,
+        image: image,
+        descriptif: descriptif,
+      },
+    });
+  };
 
   render() {
     const contextValue = {
       sideBarStatus: this.sideBarStatus,
       sideBarToggle: this.sideBarToggle,
       sideBarToggleExperiences: this.sideBarToggleExperiences,
+      selectExperience: this.selectExperience,
     };
 
     return (
@@ -48,6 +67,7 @@ export default class App extends Component {
             <div className="d-flex flex-row flex-fill">
               <Main heightOfHeader={this.state.heightOfHeader} />
               <SideBar
+                experience={this.state.experience}
                 sideBarToggle={this.sideBarToggle}
                 sideBarStatus={this.state.sideBarStatus}
                 heightOfHeader={this.state.heightOfHeader}
