@@ -7,7 +7,7 @@ export default function Card({date, image, title}) {
   
   return (
     <div className="col-12 col-sm-6 col-lg-4">
-      <article onClick={() => {contextValue.sideBarToggleExperiences()
+      <article onClick={() => {contextValue.sideBarToggleExperiences(); console.log(date)
       }} className="card card--1">
         <div className="card__info-hover">
           
