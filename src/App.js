@@ -5,7 +5,8 @@ import "./App.css";
 import Header from "./components/header/Header";
 import SideBar from "./components/side-bar/SideBar";
 import Main from "./components/main/Main";
-import ToggleSideBarContext from "./contexts/ExperiencesContext";
+import LoginForm from "./components/loginForm/LoginForm"
+import ExperiencesContext from "./contexts/ExperiencesContext";
 
 export default class App extends Component {
   constructor(props) {
@@ -21,15 +22,19 @@ export default class App extends Component {
       },
       heightOfHeader: "10px",
       sideBarStatus: false,
+      displayLoginForm: false
     };
   }
 
   getInitialHeight = (initialHeight) => {
     this.setState({ heightOfHeader: initialHeight });
   };
+
   updateHeight = (height) => {
     this.setState({ heightOfHeader: height });
   };
+
+
 
   sideBarToggle = () => {
     this.setState({ sideBarStatus: !this.state.sideBarStatus });
@@ -50,6 +55,11 @@ export default class App extends Component {
     });
   };
 
+    displayLoginForm = () => {
+    this.setState({ displayLoginForm: !this.state.displayLoginForm });
+    console.log(this.state.displayLoginForm);
+  };
+
   render() {
     const contextValue = {
       sideBarStatus: this.sideBarStatus,
@@ -61,10 +71,16 @@ export default class App extends Component {
     return (
       <div className="fadeIn d-flex flex-column vh-100 position-relative">
         <Router>
-          <ToggleSideBarContext.Provider value={contextValue}>
+          <LoginForm
+            displayLoginFormAction={this.displayLoginForm}
+            displayLoginForm={this.state.displayLoginForm}
+          />
+
+          <ExperiencesContext.Provider value={contextValue}>
             <Header
               heightOfHeader={this.updateHeight}
               getInitialHeight={this.getInitialHeight}
+              displayLoginForm={this.displayLoginForm}
             />
 
             <div className="d-flex flex-row flex-fill">
@@ -76,7 +92,7 @@ export default class App extends Component {
                 heightOfHeader={this.state.heightOfHeader}
               />
             </div>
-          </ToggleSideBarContext.Provider>
+          </ExperiencesContext.Provider>
         </Router>
       </div>
     );
