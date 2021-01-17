@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import React, {Component} from "react";
+import {BrowserRouter as Router} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Header from "./components/header/Header";
 import SideBar from "./components/side-bar/SideBar";
 import Main from "./components/main/Main";
-import ToggleSideBarContext from "./ToggleSideBarContext";
+import ToggleSideBarContext from "./contexts/ExperiencesContext";
 
 export default class App extends Component {
   constructor(props) {
@@ -17,11 +17,13 @@ export default class App extends Component {
         link: null,
         date: null,
         descriptif: null,
+        technos: null,
       },
       heightOfHeader: "10px",
       sideBarStatus: false,
     };
   }
+
   getInitialHeight = (initialHeight) => {
     this.setState({ heightOfHeader: initialHeight });
   };
@@ -35,14 +37,15 @@ export default class App extends Component {
   sideBarToggleExperiences = () => {
     this.setState({ sideBarStatus: true });
   };
-  selectExperience = (title, link, date, image, descriptif) => {
+  selectExperience = (title, link, date, image, description, technos) => {
     this.setState({
       experience: {
         title: title,
         link: link,
         date: date,
         image: image,
-        descriptif: descriptif,
+        description: description,
+        technos: technos,
       },
     });
   };

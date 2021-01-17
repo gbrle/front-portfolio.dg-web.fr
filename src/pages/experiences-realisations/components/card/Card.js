@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import "./card.css";
-import ToggleSideBarContext from "../../../../ToggleSideBarContext";
+import ToggleSideBarContext from "../../../../contexts/ExperiencesContext";
 
-export default function Card({ date, image, title, link, descriptif }) {
+export default function Card({ date, image, title, link, description, technos }) {
   const contextValue = useContext(ToggleSideBarContext);
 
   return (
@@ -10,7 +10,14 @@ export default function Card({ date, image, title, link, descriptif }) {
       <article
         onClick={() => {
           contextValue.sideBarToggleExperiences();
-          contextValue.selectExperience(title, link, date, image, descriptif);
+          contextValue.selectExperience(
+            title,
+            link,
+            date,
+            image,
+            description,
+            technos
+          );
         }}
         className="card card--1"
       >
@@ -35,7 +42,7 @@ export default function Card({ date, image, title, link, descriptif }) {
               className="card__author d-table backgroundColor-white"
               title="author"
             >
-              Celeste Mills
+              sdfsdfsd
             </div>
           </span>
         </div>
