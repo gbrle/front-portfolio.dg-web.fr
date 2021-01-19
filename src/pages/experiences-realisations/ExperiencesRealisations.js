@@ -1,8 +1,7 @@
 import { Component } from "react";
 import Card from "./components/card/Card";
+import "../../conf/axios-conf";
 import * as axios from "axios";
-// import { async } from "q";
-axios.defaults.headers.common["Accept"] = "application/json";
 
 export default class ExperiencesRealisations extends Component {
   constructor(props) {
@@ -22,9 +21,13 @@ export default class ExperiencesRealisations extends Component {
   // }
 
   componentDidMount() {
-    axios.get("http://localhost:8000/api/experiences").then((response) => {
-      this.setState({ experiences: response.data });
-    });
+
+
+    axios
+      .get("/experiences")
+      .then((response) => response.data)
+      .then((experiences) => this.setState({ experiences }))
+      .catch((err) => console.log(err));
   }
   render() {
     return (

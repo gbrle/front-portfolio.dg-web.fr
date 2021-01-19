@@ -26,11 +26,11 @@ export default class Header extends Component {
             ref={this.header}
             className="backgroundColor-black position-relative"
           >
-            <div className="lines">
+            {/* <div className="lines">
               <div className="line" />
               <div className="line" />
               <div className="line" />
-            </div>
+            </div> */}
             <div className="logo d-flex pt-3 pl-3 pl-md-5 flex-wrap align-items-center justify-content-between">
               <div className="d-flex">
                 <Link to="/" style={{ zIndex: 3 }}>
@@ -61,7 +61,7 @@ export default class Header extends Component {
                 </button>
               </div>
             </div>
-            <nav className="d-flex align-items-end text-light mt-3 text-nowrap">
+            <nav className="d-flex align-items-end text-light mt-2 mt-md-4 text-nowrap">
               <div className="menu">
                 <ul
                   style={{ listStyleType: "none" }}
