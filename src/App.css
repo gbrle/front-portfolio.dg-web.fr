@@ -12,6 +12,13 @@
 *::selection{
 background-color: #cb875f;
 }
+  .backgroundImage{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0.3;
+  }
 .color-orange {
   color: #cb875f;
 }
@@ -64,7 +71,7 @@ nav {
 }
 .logo {
   font-size: 26px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Arial", sans-serif;
 }
 .logo-dg-web {
   width: 80px;
@@ -199,5 +206,12 @@ p {
 @media screen and (max-width: 640px) {
   .fingerMove {
     display: block;
+  }
+    .backgroundImage{
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    width: 40%;
+    opacity: 0.3;
   }
 }

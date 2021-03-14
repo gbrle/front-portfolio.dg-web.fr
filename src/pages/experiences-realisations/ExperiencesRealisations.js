@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Card from "./components/card/Card";
 import "../../conf/axios-conf";
+import Loading from "./../../components/utils/Loading";
 import * as axios from "axios";
 
 export default class ExperiencesRealisations extends Component {
@@ -8,6 +9,7 @@ export default class ExperiencesRealisations extends Component {
     super(props);
     this.state = {
       experiences: [],
+      loaded: false,
     };
   }
 
@@ -16,18 +18,18 @@ export default class ExperiencesRealisations extends Component {
   //     const {data} = await axios.get("http://localhost:8000/api/experiences").then((response) => {
   //     this.setState({ experiences: response.data });
   //   } catch (error) {
-      
+
   //   }
   // }
 
   componentDidMount() {
-
-
     axios
       .get("/experiences")
       .then((response) => response.data)
       .then((experiences) => this.setState({ experiences }))
       .catch((err) => console.log(err));
+
+    this.setState({ loaded: true });
   }
   render() {
     return (
@@ -44,20 +46,24 @@ export default class ExperiencesRealisations extends Component {
           actuellement.
         </p>
         <div className="mt-5">
-          <div className="row">
-            {this.state.experiences.map(
-              ({ title, date, image, description, technos }, index) => (
-                <Card
-                  key={index}
-                  title={title}
-                  date={date}
-                  image={image}
-                  description={description}
-                  technos={technos}
-                />
-              )
-            )}
-          </div>
+          {this.state.loaded ? (
+            <div className="row fadeIn">
+              {this.state.experiences.map(
+                ({ title, date, image, description, technos }, index) => (
+                  <Card
+                    key={index}
+                    title={title}
+                    date={date}
+                    image={image}
+                    description={description}
+                    technos={technos}
+                  />
+                )
+              )}
+            </div>
+          ) : (
+            <Loading />
+          )}
         </div>
       </div>
     );

@@ -1,3 +1,11 @@
+.connectionButton{
+    border-radius: "4px";
+    border: 1px solid #cb875f;
+}
+.connectionButton:hover{
+    color: black!important;
+    background-color: #cb875f!important;
+}
 .logo-dg-web {
     z-index: 3;
 }

@@ -24,38 +24,38 @@ export default class Header extends Component {
         return (
           <header
             ref={this.header}
-            className="backgroundColor-black position-relative"
+            className="backgroundColor-black position-relative d-block d-md-flex justify-content-around"
           >
             {/* <div className="lines">
               <div className="line" />
               <div className="line" />
               <div className="line" />
             </div> */}
-            <div className="logo d-flex pt-3 pl-3 pl-md-5 flex-wrap align-items-center justify-content-between">
-              <div className="d-flex">
+            <div className="logo d-flex pt-3 pl-3 pl-md-5 flex-wrap align-items-center justify-content-between text-nowrap">
+              <div className="d-flex mb-0 mb-md-3">
                 <Link to="/" style={{ zIndex: 3 }}>
                   <img className="logo-dg-web" alt="logo-dg-web" src={logo} />
                 </Link>
                 <div>
                   <p
-                    style={{ zIndex: 3 }}
+                    style={{ zIndex: 3, fontSize: "26px" }}
                     className="pl-3 text-light mb-0 font-weight-bold"
                   >
                     David Gabriele
                   </p>
                   <p
-                    style={{ fontSize: "14px", zIndex: 3 }}
+                    style={{ fontSize: "15px", zIndex: 3 }}
                     className="pl-3 text-light mb-0"
                   >
-                    Développement web
+                    Développeur Back-End
                   </p>
                 </div>
               </div>
               <div style={{ zIndex: 3 }}>
                 <button
-                  style={{ borderRadius: 0 }}
+                  style={{ borderRadius: "4px", border: "1px solid #cb875f" }}
                   onClick={() => this.props.displayLoginForm()}
-                  className="btn btn-transparent text-light mr-4 text-uppercase text-bold"
+                  className="btn btn-transparent text-light mr-4 text-uppercase text-bold connectionButton"
                 >
                   Se connecter
                 </button>

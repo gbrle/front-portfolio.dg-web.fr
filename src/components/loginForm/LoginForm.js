@@ -41,8 +41,11 @@ export default function LoginForm(props) {
     axios
       .post("/login", values)
       .then((response) => {
-        console.log(response.data.token);
-      });
+        console.log(response.data.token)
+      })
+      .catch(() => console.log("Impossible de se connecter, vérifiez votre e-mail ou mot de passe !"));
+        
+      
   };
   return (
     <div className={props.displayLoginForm ? "d-block" : "d-none"}>
@@ -123,7 +126,6 @@ export default function LoginForm(props) {
                     variant="contained"
                     color="primary"
                     className={classes.submit}
-                    disabled={isSubmitting}
                   >
                     Connexion
                   </Button>
